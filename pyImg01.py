@@ -17,7 +17,6 @@ matplotlib.use('Qt5Agg')
 import matplotlib.pyplot as plt
 import argparse
 import SimpleITK as sitk
-os.chdir('C:\\Users\Richard Schultheis\Google Drive\BBE\\6\py')
 from myshow import myshow,myshow3d
 
 #%%Section Functions
@@ -154,8 +153,8 @@ def setROI(image,size:tuple,index:tuple):
     return imageROI
 
 '''
-    os.chdir('C:\\Users\Richard Schultheis\Downloads\carotid')
-    im1=sitk.ReadImage('C:\\Users\Richard Schultheis\Google Drive\BBE\\6\py\sitk\Sockel_red.jpg')
+    os.chdir('')
+    im1=sitk.ReadImage('')
     #im1Transposed=np.transpose(im1,(1,0))    
     plot2d(im1) 
     plotAgainstLowRes(im1)    
@@ -243,10 +242,7 @@ def SPinSITK(a,fun):
     
 #%%Section Read Files
     
-#im3d=sitk.ReadImage('C:\\Users\\Richard Schultheis\\Downloads\carotid\\volumes\\HC002 test_TOF_img.nii')
-im3d=sitk.ReadImage('C:\\Users\Richard Schultheis\Downloads\\US img\\3D US daten\OK\\Pat 11\IMG_20110112_4_2.nrrd')
-#im3d=sitk.ReadImage('C:\\Users\Richard Schultheis\Downloads\\US img\\3D US daten\OK\\12Jan11\IMG_20110112_1_2.nrrd')
-#im3d=sitk.ReadImage('C:\\Users\Richard Schultheis\Downloads\\US img\\Output Volume_1.nrrd')
+#im3d=sitk.ReadImage('')'
 
 '''
 #im3d.GetSize()
@@ -414,10 +410,10 @@ xy[102,89,87]=1000
 plotSlices(xy<np.square(np.abs(statF3.GetMinimum())),'sagittal')
 plotSlices(xy,'sagittal')
 
-#%%
-os.chdir('C:\\Users\\Richard Schultheis\\Downloads\\US img\\3D US daten')
-p=('C:\\Users\\Richard Schultheis\\Downloads\\US img\\3D US daten\\pic3d')
-superList=os.walk('C:\\Users\\Richard Schultheis\\Downloads\\US img\\3D US daten')
+#%%Save slices of unsegmented medical images in a loop
+os.chdir('')
+p=('')
+superList=os.walk('')
 for root, dirs, files in superList:
     for file in files:
         path=os.path.join(root,file)
@@ -428,9 +424,9 @@ for root, dirs, files in superList:
             myshow3d(img,yslices=range(50,size[1]-50,30), zslices=range(50,size[2]-50,20), dpi=30)
             plt.savefig(p+'\\'+file+'.png')
             plt.close()
-#%%
-p=('C:\\Users\\Richard Schultheis\\Downloads\\PROMISE12\\data\\pic3d')
-superList=os.walk('C:\\Users\\Richard Schultheis\\Downloads\\PROMISE12\\data')
+#%%Save slices of segmented medical images in a loop
+p=('')
+superList=os.walk('')
 for root, dirs, files in superList:
     for file in files:
         path=os.path.join(root,file)

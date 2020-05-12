@@ -25,7 +25,6 @@ import SimpleITK as sitk
 import skimage as si
 from skimage import segmentation
 from pylab import imshow
-os.chdir('C:\\Users\Richard Schultheis\Google Drive\BBE\\6\py')
 from myshow import myshow,myshow3d
 
 #%%Section Functions
@@ -264,8 +263,8 @@ sob1=sitk.SobelEdgeDetectionImageFilter()
 statF=sitk.StatisticsImageFilter()
 
 #%% Open File
-dataPath='C:\\Users\\Richard Schultheis\\Downloads\\US img\\3D US daten\\Good\\'
-im3d=sitk.ReadImage('C:\\Users\Richard Schultheis\Downloads\\US img\\3D US daten\OK\\Pat 11\IMG_20110112_4_2.nrrd')
+dataPath=''
+im3d=sitk.ReadImage('')
 sitkImages=[]
 for f in os.listdir(dataPath):
     sitkImages.append(sitk.ReadImage(dataPath+f))
